@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.9.6 on win32)" generated="20210910 15:43:02.556" rpa="false" schemaversion="2">
+<suite id="s1" name="Verify Functionality" source="C:\Users\hp\PycharmProjects\MKStash\Tests\MKStash\Verify_Functionality.robot">
+<test id="s1-t1" name="Verify SignUp Functionality for mkStash">
+<doc>This testcase is for SignUp functionality into MKStash website</doc>
+<tag>Functional</tag>
+<status status="FAIL" starttime="20210910 15:43:02.744" endtime="20210910 15:43:02.744">Test case contains no keywords.</status>
+</test>
+<test id="s1-t2" name="Verify Login Functionality for mkStash">
+<kw name="Start TestCase" library="CommonFunctionality" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://mkstash.com/version-test/</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210910 15:43:02.746" level="INFO">Opening browser 'Chrome' to base url 'https://mkstash.com/version-test/'.</msg>
+<status status="PASS" starttime="20210910 15:43:02.746" endtime="20210910 15:43:15.506"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210910 15:43:15.506" endtime="20210910 15:43:15.633"/>
+</kw>
+<status status="PASS" starttime="20210910 15:43:02.746" endtime="20210910 15:43:15.633"/>
+</kw>
+<kw name="Login as a User" library="MKStash_UserDefinedKeywords">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>//div[contains(text(),'Our Products')]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210910 15:43:15.634" endtime="20210910 15:43:15.656"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//div[contains(text(),'Login')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210910 15:43:15.657" level="INFO">Clicking element '//div[contains(text(),'Login')]'.</msg>
+<status status="PASS" starttime="20210910 15:43:15.656" endtime="20210910 15:43:15.712"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>//div[contains(text(),'Welcome Back!')]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210910 15:43:15.713" endtime="20210910 15:43:17.773"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@type='email']</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210910 15:43:17.773" level="INFO">Typing text 'ashetty@jairosoft.com' into text field '//input[@type='email']'.</msg>
+<status status="PASS" starttime="20210910 15:43:17.773" endtime="20210910 15:43:17.873"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@placeholder='Enter your password...']</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210910 15:43:17.874" level="INFO">Typing text 'yP&lt;*HD3T!' into text field '//input[@placeholder='Enter your password...']'.</msg>
+<status status="PASS" starttime="20210910 15:43:17.873" endtime="20210910 15:43:17.969"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[normalize-space()='Login']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210910 15:43:17.970" level="INFO">Clicking element '//button[normalize-space()='Login']'.</msg>
+<status status="PASS" starttime="20210910 15:43:17.969" endtime="20210910 15:43:18.035"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>//div[@id='ani_text']//div[@class='content'][normalize-space()='My Account']</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210910 15:43:18.035" endtime="20210910 15:43:19.803"/>
+</kw>
+<status status="PASS" starttime="20210910 15:43:15.634" endtime="20210910 15:43:19.803"/>
+</kw>
+<kw name="Search Product with filtering" library="LandingPage">
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<arg>//div[@class='content'][normalize-space()='Shop']</arg>
+<arg>Shop</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20210910 15:43:19.805" endtime="20210910 15:43:19.871"/>
+</kw>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<arg>//div[@class='content'][normalize-space()='Lorem ipsum dolor sit BLACK FRIDAY SALE! 30% tempor incididunt.']</arg>
+<arg>${FridaySaleText}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20210910 15:43:19.871" endtime="20210910 15:43:19.911"/>
+</kw>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<arg>//div[contains(text(),'My Account')]</arg>
+<arg>My Account</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20210910 15:43:19.912" endtime="20210910 15:43:19.938"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//div[@class='content'][normalize-space()='Shop']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210910 15:43:19.939" level="INFO">Clicking element '//div[@class='content'][normalize-space()='Shop']'.</msg>
+<status status="PASS" starttime="20210910 15:43:19.938" endtime="20210910 15:43:22.853"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${Delay}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210910 15:43:27.867" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210910 15:43:22.853" endtime="20210910 15:43:27.867"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>//div[contains(text(),'Search')]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210910 15:43:27.867" endtime="20210910 15:43:27.880"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>//input[@id='search_prod']</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210910 15:43:27.880" endtime="20210910 15:43:27.893"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//input[@id='search_prod']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210910 15:43:27.893" level="INFO">Clicking element '//input[@id='search_prod']'.</msg>
+<status status="PASS" starttime="20210910 15:43:27.893" endtime="20210910 15:43:27.953"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id='search_prod']</arg>
+<arg>${SearchText}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210910 15:43:27.953" level="INFO">Typing text 'Vans off the wall rubber shoes' into text field '//input[@id='search_prod']'.</msg>
+<status status="PASS" starttime="20210910 15:43:27.953" endtime="20210910 15:43:28.063"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//div[@class='bubble-element GroupItem group-item entry-1']//img</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210910 15:43:28.063" level="INFO">Clicking element '//div[@class='bubble-element GroupItem group-item entry-1']//img'.</msg>
+<status status="PASS" starttime="20210910 15:43:28.063" endtime="20210910 15:43:28.128"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${Delay}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210910 15:43:33.129" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210910 15:43:28.128" endtime="20210910 15:43:33.129"/>
+</kw>
+<status status="PASS" starttime="20210910 15:43:19.804" endtime="20210910 15:43:33.129"/>
+</kw>
+<kw name="Add Product to the cart" library="ProductDetailsPage">
+<kw name="Sleep" library="BuiltIn">
+<arg>${Delay}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210910 15:43:38.140" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210910 15:43:33.130" endtime="20210910 15:43:38.140"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${stocktext}</var>
+<arg>//body/div[@class='main-page bubble-element Page']/div[@class='bubble-r-line']/div[@class='bubble-r-box']/div[@class='bubble-element Group']/div[@class='bubble-r-line']/div[@class='bubble-r-box']/div[@class='bubble-element Group']/div[@class='bubble-r-line']/div[@class='bubble-r-box']/div[@class='bubble-element Group']/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210910 15:43:38.189" level="INFO">${stocktext} = Quantity: 3  stocks left! </msg>
+<status status="PASS" starttime="20210910 15:43:38.140" endtime="20210910 15:43:38.189"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${Delay}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210910 15:43:43.205" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210910 15:43:38.190" endtime="20210910 15:43:43.205"/>
+</kw>
+<kw name="Remove String" library="String">
+<var>${Qty_text}</var>
+<arg>${stocktext}</arg>
+<arg>,</arg>
+<arg>Quantity:</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<msg timestamp="20210910 15:43:43.206" level="INFO">${Qty_text} =  3  stocks left! </msg>
+<status status="PASS" starttime="20210910 15:43:43.206" endtime="20210910 15:43:43.206"/>
+</kw>
+<kw name="Remove String" library="String">
+<var>${stocks_left}</var>
+<arg>${Qty_text}</arg>
+<arg>,</arg>
+<arg>stocks left!</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<msg timestamp="20210910 15:43:43.207" level="INFO">${stocks_left} =  3   </msg>
+<status status="PASS" starttime="20210910 15:43:43.206" endtime="20210910 15:43:43.207"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>${stocks_left}</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Sleep" library="BuiltIn">
+<arg>${Delay}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210910 15:43:48.217" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210910 15:43:43.208" endtime="20210910 15:43:48.217"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//button[normalize-space()='+']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210910 15:43:48.218" level="INFO">Clicking button '//button[normalize-space()='+']'.</msg>
+<status status="PASS" starttime="20210910 15:43:48.218" endtime="20210910 15:43:48.318"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${Delay}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210910 15:43:53.326" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210910 15:43:48.318" endtime="20210910 15:43:53.326"/>
+</kw>
+<status status="PASS" starttime="20210910 15:43:43.207" endtime="20210910 15:43:53.326"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Sleep" library="BuiltIn">
+<arg>${Delay}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210910 15:43:58.328" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210910 15:43:53.327" endtime="20210910 15:43:58.329"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//button[normalize-space()='+']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210910 15:43:58.329" level="INFO">Clicking button '//button[normalize-space()='+']'.</msg>
+<status status="PASS" starttime="20210910 15:43:58.329" endtime="20210910 15:43:58.392"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${Delay}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210910 15:44:03.396" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210910 15:43:58.392" endtime="20210910 15:44:03.396"/>
+</kw>
+<status status="PASS" starttime="20210910 15:43:53.327" endtime="20210910 15:44:03.396"/>
+</iter>
+<status status="PASS" starttime="20210910 15:43:43.207" endtime="20210910 15:44:03.397"/>
+</for>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>//div[contains(text(),'Vans off the wall rubber shoes')]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210910 15:44:03.397" endtime="20210910 15:44:03.417"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//button[normalize-space()='Add to Cart']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210910 15:44:03.418" level="INFO">Clicking button '//button[normalize-space()='Add to Cart']'.</msg>
+<status status="PASS" starttime="20210910 15:44:03.418" endtime="20210910 15:44:03.491"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210910 15:44:08.496" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210910 15:44:03.491" endtime="20210910 15:44:08.496"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${Delay}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210910 15:44:13.503" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210910 15:44:08.497" endtime="20210910 15:44:13.503"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//button[@class='ion-ios-cart-outline inner-element bubble-element clickable-element']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210910 15:44:13.504" level="INFO">Clicking button '//button[@class='ion-ios-cart-outline inner-element bubble-element clickable-element']'.</msg>
+<status status="PASS" starttime="20210910 15:44:13.504" endtime="20210910 15:44:13.604"/>
+</kw>
+<status status="PASS" starttime="20210910 15:43:33.130" endtime="20210910 15:44:13.604"/>
+</kw>
+<kw name="Verify My Cart Functionality" library="Cart">
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210910 15:44:16.617" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210910 15:44:13.605" endtime="20210910 15:44:16.617"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>(//div[@class='bubble-element GroupItem group-item entry-1']//div[@class='bubble-element Group clickable-element'])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210910 15:44:16.618" level="INFO">Clicking element '(//div[@class='bubble-element GroupItem group-item entry-1']//div[@class='bubble-element Group clickable-element'])[1]'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210910 15:44:17.870" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-75.png"&gt;&lt;img src="selenium-screenshot-75.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210910 15:44:17.614" endtime="20210910 15:44:17.870"/>
+</kw>
+<msg timestamp="20210910 15:44:17.872" level="FAIL">Element with locator '(//div[@class='bubble-element GroupItem group-item entry-1']//div[@class='bubble-element Group clickable-element'])[1]' not found.</msg>
+<status status="FAIL" starttime="20210910 15:44:16.617" endtime="20210910 15:44:17.872"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20210910 15:44:17.872" endtime="20210910 15:44:17.872"/>
+</kw>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<arg>//div[contains(text(),'Vans off the wall rubber shoes')]</arg>
+<arg>Vans off the wall rubber shoes</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="NOT RUN" starttime="20210910 15:44:17.872" endtime="20210910 15:44:17.872"/>
+</kw>
+<status status="FAIL" starttime="20210910 15:44:13.605" endtime="20210910 15:44:17.873"/>
+</kw>
+<kw name="Verify Checkout Functionality" library="Cart">
+<status status="NOT RUN" starttime="20210910 15:44:17.873" endtime="20210910 15:44:17.873"/>
+</kw>
+<doc>This testcase is for Login into MKStash website</doc>
+<tag>Functional</tag>
+<status status="FAIL" starttime="20210910 15:43:02.745" endtime="20210910 15:44:17.874">Element with locator '(//div[@class='bubble-element GroupItem group-item entry-1']//div[@class='bubble-element Group clickable-element'])[1]' not found.</status>
+</test>
+<doc>Basic Functionality</doc>
+<status status="FAIL" starttime="20210910 15:43:02.557" endtime="20210910 15:44:17.875"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="2" skip="0">Functional</stat>
+</tag>
+<suite>
+<stat pass="0" fail="2" skip="0" id="s1" name="Verify Functionality">Verify Functionality</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
